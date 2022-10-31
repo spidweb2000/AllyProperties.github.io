@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ally Properties | Tools</title>
+    <link rel="stylesheet" href="tools.css">
+    <script src="script.js"></script>
+    <script type="text/javascript"
+        src="https://www.calculator.com.my/wp-content/themes/twentythirteen/js/jqplot/jquery.min.js">
+    </script>
+    <script type="text/javascript"
+        src="https://www.calculator.com.my/wp-content/themes/twentythirteen/js/jqplot/jquery.jqplot.min.js">
+    </script>
+    <script type="text/javascript"
+        src="https://www.calculator.com.my/wp-content/themes/twentythirteen/js/jqplot/jqplot.pieRenderer.min.js">
+    </script>
+    <script type="text/javascript"
+        src="https://www.calculator.com.my/wp-content/themes/twentythirteen/js/tooltipster/jquery.tooltipster.min.js">
+    </script>
+    <script>
+        // <![CDATA[
+        $(document).ready(function () {
+            initMortgage("totalpurchaseprice", "downpayment", "years", "interestrate");
+            $('#home-post-ad-link').click(function () {
+                _gaq.push(['_trackEvent', 'Sponsored Link', 'Clicked', $(
+                    '#home-post-ad-link').attr("href")]);
+            });
+        });
+        // ]]&gt;
+    </script>
+    <script type="text/javascript"
+        src="https://www.calculator.com.my/wp-content/plugins/my-calculator/function.js?20220411004"></script>
+    <script type="text/javascript"
+        src="https://www.calculator.com.my/wp-content/plugins/my-calculator/mycalculator.js?20220411004"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" id="twentythirteen-style-css"
+        href="https://www.calculator.com.my/wp-content/themes/twentythirteen/style.css?ver=2013-07-18" type="text/css"
+        media="all">
+    <link rel="stylesheet" type="text/css"
+        href="https://www.calculator.com.my/wp-content/themes/twentythirteen/css/jqplot/jquery.jqplot.css">
+    <script src="./RPGT _ CKHT Calculator_files/jsapi"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script
+        src="./RPGT _ CKHT Calculator_files/calculator-214e6dbc203317cdeff9ac61a9bf26c968eaf63927286bfb3159d8e31f4c82ac.js.download">
+    </script> -->
+</head>
+
+<body>
+
+    <ul class="large">
+        <a href="index.html"><img id="logo" src="src/img/logo.png"></a>
+        <li><a class="menu" href="about.html">关于我们</a></li>
+        <li><a class="menu" href="sharing.html">资讯分享</a></li>
+        <li>
+            <div class="dropdown menu">
+                工具
+                <i class="fa fa-caret-down"></i>
+                <div class="dropdown-content">
+                    <a href="tools.html">单位转换器 / <br>贷款计算</a>
+                    <a href="tool-RPGT.html">产业盈利税计算</a>
+                </div>
+            </div>
+        </li>
+        <li><a class="menu" href="sell.html">我是业主</a></li>
+        <li>
+            <div class="dropdown menu">
+                楼盘
+                <i class="fa fa-caret-down"></i>
+                <div class="dropdown-content">
+                    <a href="newbuy.html">最新楼盘</a>
+                    <a href="secbuy.html">二手楼盘</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="medium">
+        <div id="mySidepanelM" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a class="noHover">楼盘</a>
+            <div class="subMenu">
+                <a href="newbuy.html">最新楼盘</a>
+                <a href="secbuy.html">二手楼盘</a>
+            </div>
+            <a href="sell.html">我是业主</a>
+            <a class="noHover">工具</a>
+            <div class="subMenu">
+                <a href="tools.html">单位转换器 / <br>贷款计算</a>
+                <a href="tool-RPGT.html">产业盈利税计算</a>
+            </div>
+            <a href="sharing.html">资讯分享</a>
+            <a href="about.html">关于我们</a>
+        </div>
+        <a style="position: fixed; top:0;" href="index.html"><img id="logo" src="src/img/logo.png"></a>
+        <button class="openbtn" onclick="openNavM()">☰</button>
+    </div>
+
+    <div class="small">
+        <div id="mySidepanelS" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a class="noHover">楼盘</a>
+            <div class="subMenu">
+                <a href="newbuy.html">最新楼盘</a>
+                <a href="secbuy.html">二手楼盘</a>
+            </div>
+            <a href="sell.html">我是业主</a>
+            <a class="noHover">工具</a>
+            <div class="subMenu">
+                <a href="tools.html">单位转换器 / <br>贷款计算</a>
+                <a href="tool-RPGT.html">产业盈利税计算</a>
+            </div>
+            <a href="sharing.html">资讯分享</a>
+            <a href="about.html">关于我们</a>
+        </div>
+        <a style="position: fixed; top:0; left: 0;" href="index.html"><img id="logo" src="src/img/logo.png"></a>
+        <button class="openbtn" onclick="openNavS()">☰</button>
+    </div>
+
+    <div id="converter">
+        <h1>Unit Converter</h1>
+        <div id="converterFM" style="display: block;">
+            <div class="row">
+                <p class="left">
+                    <label>Feet</label><br>
+                    <input id="input" type="number" placeholder="Feet" oninput="LengthConverterFM(this.value)"
+                        onchange="LengthConverterFM(this.value)">
+                </p>
+                <div class="right">
+                    <p>Meters</p>
+                    <span id="outputMeters"></span>
+                </div>
+            </div>
+        </div>
+        <div id="converterMF" style="display: none;">
+            <div class="row">
+                <p class="left">
+                    <label>Meters</label><br>
+                    <input id="input" type="number" placeholder="Meters" oninput="LengthConverterMF(this.value)"
+                        onchange="LengthConverterMF(this.value)">
+                </p>
+                <div class="right">
+                    <p>Feet</p>
+                    <span id="outputFeet"></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="gold-btn" onclick="SwapConverter()">Swap</button>
+        </div>
+    </div>
+
+    <h1 style="margin-left: 80px;">Loan Calculator</h1>
+    <div class="mortgage-field-input-container">
+        <div>
+            <div class="field">Property Price (RM):<input id="morthouseprc" type="text" value="500,000.00"><span
+                    id="valmorthouseprc" class="dcube-missing-field" style="display: none;">Enter a number.</span></div>
+            <div class="field">Down Payment (RM):<input id="mortdownpaymentamt" type="text" value="50,000.00"><span
+                    id="valmortdownpayment" class="dcube-missing-field" style="display: none;">Enter a number.</span>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div>
+            <div class="field">Loan Period (Years):<input id="mortyr" type="text" value="35"><span id="valmortyr"
+                    class="dcube-missing-field" style="display: none;">Enter a number.</span></div>
+            <div class="field">Interest Rate (%):<input id="mortinterestrate" type="text" value="4.25"><span
+                    id="valmortinterestrate" class="dcube-missing-field" style="display: none;">Enter a number.</span>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="float-button"><button class="gold-btn" id="mortcalculatebtn" type="button">Calculate</button>
+        </div>
+    </div>
+
+    <div class="pie-chart-container">
+        <div class="description">Result:</div>
+        <br>
+        <div>PAYMENT BREAKDOWN</div>
+        <div id="myDiv2" class="pie-chart jqplot-target">
+        </div>
+    </div>
+
+    <div class="dcube-container-result-top">
+        <div class="result">Monthly Repayment</span><br>
+            <span id="mthlyinstallment" class="real-result">RM 2,060.52</span></div>
+    </div>
+
+    <div class="graph-container">
+        <h1>PAYMENT SCHEDULE</h1>
+        <div style="display:none" id="myDiv1" class="line-graph jqplot-target" style="position: relative;">
+        </div>
+
+        <table id="mortgagetable" class="amortization">
+            <thead>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>YEARS</td>
+                    <td class="middlespace"></td>
+                    <td id="firstportion">PRINCIPAL</td>
+                    <td id="middleportion">INTEREST</td>
+                    <td id="lastportion">BALANCE</td>
+                    <td class="rightspace"></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>1st</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">5,711.68</td>
+                    <td class="currency">19,014.59</td>
+                    <td class="currency">444,288.32</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>2nd</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">11,670.90</td>
+                    <td class="currency">37,781.66</td>
+                    <td class="currency">438,329.10</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>3rd</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">17,888.37</td>
+                    <td class="currency">56,290.46</td>
+                    <td class="currency">432,111.63</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>4th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">24,375.29</td>
+                    <td class="currency">74,529.81</td>
+                    <td class="currency">425,624.71</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>5th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">31,143.34</td>
+                    <td class="currency">92,488.04</td>
+                    <td class="currency">418,856.66</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>6th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">38,204.71</td>
+                    <td class="currency">110,152.95</td>
+                    <td class="currency">411,795.29</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>7th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">45,572.09</td>
+                    <td class="currency">127,511.84</td>
+                    <td class="currency">404,427.91</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>8th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">53,258.77</td>
+                    <td class="currency">144,551.44</td>
+                    <td class="currency">396,741.23</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>9th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">61,278.56</td>
+                    <td class="currency">161,257.92</td>
+                    <td class="currency">388,721.44</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>10th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">69,645.92</td>
+                    <td class="currency">177,616.84</td>
+                    <td class="currency">380,354.08</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>11th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">78,375.90</td>
+                    <td class="currency">193,613.14</td>
+                    <td class="currency">371,624.10</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>12th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">87,484.21</td>
+                    <td class="currency">209,231.10</td>
+                    <td class="currency">362,515.79</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>13th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">96,987.26</td>
+                    <td class="currency">224,454.33</td>
+                    <td class="currency">353,012.74</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>14th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">106,902.15</td>
+                    <td class="currency">239,265.71</td>
+                    <td class="currency">343,097.85</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>15th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">117,246.72</td>
+                    <td class="currency">253,647.41</td>
+                    <td class="currency">332,753.28</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>16th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">128,039.61</td>
+                    <td class="currency">267,580.80</td>
+                    <td class="currency">321,960.39</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>17th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">139,300.24</td>
+                    <td class="currency">281,046.45</td>
+                    <td class="currency">310,699.76</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>18th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">151,048.88</td>
+                    <td class="currency">294,024.09</td>
+                    <td class="currency">298,951.12</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>19th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">163,306.67</td>
+                    <td class="currency">306,492.57</td>
+                    <td class="currency">286,693.33</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>20th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">176,095.69</td>
+                    <td class="currency">318,429.82</td>
+                    <td class="currency">273,904.31</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>21st</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">189,438.96</td>
+                    <td class="currency">329,812.83</td>
+                    <td class="currency">260,561.04</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>22nd</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">203,360.49</td>
+                    <td class="currency">340,617.57</td>
+                    <td class="currency">246,639.51</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>23rd</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">217,885.35</td>
+                    <td class="currency">350,818.99</td>
+                    <td class="currency">232,114.65</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>24th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">233,039.69</td>
+                    <td class="currency">360,390.93</td>
+                    <td class="currency">216,960.31</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>25th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">248,850.78</td>
+                    <td class="currency">369,306.11</td>
+                    <td class="currency">201,149.22</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>26th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">265,347.09</td>
+                    <td class="currency">377,536.08</td>
+                    <td class="currency">184,652.91</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>27th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">282,558.31</td>
+                    <td class="currency">385,051.14</td>
+                    <td class="currency">167,441.69</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>28th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">300,515.42</td>
+                    <td class="currency">391,820.30</td>
+                    <td class="currency">149,484.58</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>29th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">319,250.76</td>
+                    <td class="currency">397,811.24</td>
+                    <td class="currency">130,749.24</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>30th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">338,798.04</td>
+                    <td class="currency">402,990.24</td>
+                    <td class="currency">111,201.96</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>31st</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">359,192.45</td>
+                    <td class="currency">407,322.10</td>
+                    <td class="currency">90,807.55</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>32th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">380,470.72</td>
+                    <td class="currency">410,770.11</td>
+                    <td class="currency">69,529.28</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>33th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">402,671.13</td>
+                    <td class="currency">413,295.97</td>
+                    <td class="currency">47,328.87</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>34th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">425,833.66</td>
+                    <td class="currency">414,859.72</td>
+                    <td class="currency">24,166.34</td>
+                    <td class="rightspace"></td>
+                </tr>
+                <tr>
+                    <td class="leftspace"></td>
+                    <td>35th</td>
+                    <td class="middlespace"></td>
+                    <td class="currency">450,000.00</td>
+                    <td class="currency">415,419.65</td>
+                    <td class="currency">0.00</td>
+                    <td class="rightspace"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="clear"></div>
+    </div>
+</body>
+
+<footer>
+    <div class="social">
+        <a href="mailto:allyang.iqi@gmail.com" class="mail"><i class="ion-android-mail"></i></a>
+        <a href="https://wa.me/60138890033" class="ws"><i class="ion-social-whatsapp-outline"></i></a>
+        <a href="https://www.facebook.com/danny.ally.realtor" class="fb"><i class="ion-social-facebook"></i></a>
+        <a href="https://www.instagram.com/ally.ang.property" class="ig"><i class="ion-social-instagram"></i></a>
+        <a href="https://youtube.com/channel/UCGjeFFDOGMoPxGC6-COJX0Q" class="yt"><i class="ion-social-youtube"></i></a>
+    </div>
+    <p class="copyright">© 2022 ALLYPROPERTIES. ALL RIGHTS RESERVED.</p>
+</footer>
+
+
+</html>
