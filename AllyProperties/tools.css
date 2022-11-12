@@ -178,6 +178,7 @@ a:hover {
 #logo {
     width: 80px !important;
     height: 60px !important;
+    background-color: #000000;
 }
 
 .mortgage-field-input-container {
