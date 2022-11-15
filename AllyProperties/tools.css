@@ -332,12 +332,6 @@ footer {
     color: #aaa !important;
 }
 
-@media only screen and (max-width: 1200px) {
-    body {
-        background-color: yellow;
-    }
-}
-
 @media only screen and (max-width: 768px) {
 
     body {
