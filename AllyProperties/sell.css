@@ -618,3 +618,28 @@ footer {
         margin-top: 0px;
     }
 }
+
+@media (max-width: 950px) {
+    .container{
+      width: 90%;
+      padding: 10px 40px 20px 35px ;
+    }
+    .container .content .right-side{
+     width: 75%;
+     margin-left: 55px;
+    }
+}
+
+@media (max-width: 820px) {
+    .container{
+      margin: 40px 0;
+      height: 100%;
+    }
+    .container .content{
+      flex-direction: column-reverse;
+    }
+   .container .content .right-side{
+     width: 100%;
+     margin-left: 0;
+   }
+}
