@@ -542,7 +542,6 @@ footer {
     }
     
     body {
-        width: 100%;
         overflow-x: hidden;
     }
 
@@ -621,7 +620,6 @@ footer {
 
 @media (max-width: 950px) {
     .container{
-      width: 90%;
       padding: 10px 40px 20px 35px ;
     }
     .container .content .right-side{
@@ -632,7 +630,7 @@ footer {
 
 @media (max-width: 820px) {
     .container{
-      margin: 40px 0;
+      margin: 40px 5%;
       height: 100%;
     }
     .container .content{
