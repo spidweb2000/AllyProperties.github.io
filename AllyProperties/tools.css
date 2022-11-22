@@ -186,7 +186,7 @@ a:hover {
     margin-left: 2%;
     width: 60%;
     float: left;
-    height: 500px;
+    /* height: 500px; */
 }
 
 .field {
@@ -210,13 +210,14 @@ a:hover {
 }
 
 .dcube-container-result-top {
+    border-top: none !important;
     width: 30%;
     float: left;
     margin-top: 40px !important;
     padding-bottom: 0px !important;
     margin-bottom: 0px !important;
     font-size: medium !important;
-    height: 100px !important;
+    /* height: 500px !important; */
 }
 
 .graph-container {
@@ -232,7 +233,6 @@ td p {
 #converter {
     margin-top: 80px;
     padding: 0 15% 0 15%;
-    height: 300px;
 }
 
 #converter h1 {
@@ -255,10 +255,18 @@ td p {
     /* Should be removed. Only for demonstration */
 }
 
+.center {
+    position: absolute;
+    width: 2%;
+    top: 210px;
+    left: 39%;
+}
+
 .right {
     float: left;
     width: 40%;
     height: 100px;
+    margin-left: 20px;
 }
 
 .row:after {
@@ -276,6 +284,10 @@ td p {
 .gold-btn {
     background: #ff6d00 !important;
     border-bottom: 7px solid goldenrod !important;
+}
+
+.btn:active, .gold-btn:active{
+    border-top: none !important;
 }
 
 footer {

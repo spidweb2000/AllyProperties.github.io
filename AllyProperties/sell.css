@@ -13,6 +13,10 @@ html {
 
 body {
     margin: 0;
+    background-image: url('src/img/penang.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .phone {
@@ -197,6 +201,7 @@ li a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: white;
   }
   .container .content .left-side{
     width: 25%;
