@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ally Properties | 工具</title>
+  <link rel="stylesheet" href="tools.css">
+  <link rel="icon" href="src/img/icon.png">
+  <script src="script.js"></script>
+  <script type="text/javascript"
+    src="https://www.calculator.com.my/wp-content/themes/twentythirteen/js/jqplot/jquery.min.js">
+  </script>
+  <script type="text/javascript"
+    src="https://www.calculator.com.my/wp-content/themes/twentythirteen/js/jqplot/jquery.jqplot.min.js">
+  </script>
+  <script type="text/javascript"
+    src="https://www.calculator.com.my/wp-content/themes/twentythirteen/js/jqplot/jqplot.pieRenderer.min.js">
+  </script>
+  <script type="text/javascript"
+    src="https://www.calculator.com.my/wp-content/themes/twentythirteen/js/tooltipster/jquery.tooltipster.min.js">
+  </script>
+  <script>
+    // <![CDATA[
+    $(document).ready(function () {
+      initMortgage("totalpurchaseprice", "downpayment", "years", "interestrate");
+      $('#home-post-ad-link').click(function () {
+        _gaq.push(['_trackEvent', 'Sponsored Link', 'Clicked', $(
+          '#home-post-ad-link').attr("href")]);
+      });
+    });
+    // ]]&gt;
+  </script>
+  <script type="text/javascript"
+    src="https://www.calculator.com.my/wp-content/plugins/my-calculator/function.js?20220411004"></script>
+  <script type="text/javascript"
+    src="https://www.calculator.com.my/wp-content/plugins/my-calculator/mycalculator.js?20220411004"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" id="twentythirteen-style-css"
+    href="https://www.calculator.com.my/wp-content/themes/twentythirteen/style.css?ver=2013-07-18" type="text/css"
+    media="all">
+
+  <link rel="stylesheet" media="all"
+    href="./RPGT _ CKHT Calculator_files/calculator-3726501c7d015a525317aae4e6dcb38e885c68b081b1ba78369d29707ce37608.css">
+</head>
+
+<body>
+
+  <div class="menuBar large">
+    <a href="index.html"><img id="logo" src="src/img/logo.png"></a>
+    <a class="menu" href="about.html">关于我们</a>
+    <a class="menu" href="sharing.html">资讯分享</a>
+    <div class="dropdown menu">
+      工具
+      <i class="fa fa-caret-down"></i>
+      <div class="dropdown-content">
+        <a href="tools.html">单位转换器 / <br>贷款计算</a>
+        <a href="tool-RPGT.html">产业盈利税计算</a>
+      </div>
+    </div>
+    <div class="dropdown menu">
+      我们的服务
+      <i class="fa fa-caret-down"></i>
+      <div class="dropdown-content">
+        <a href="sell.html">寻找最新楼盘</a>
+        <a href="service/sec.html">二手买卖</a>
+        <a href="service/rent.html">租赁服务</a>
+        <a href="service/market.html">市场最新成交行情</a>
+        <a href="service/bank.html">银行估价</a>
+      </div>
+    </div>
+    <div class="dropdown menu">
+      楼盘
+      <i class="fa fa-caret-down"></i>
+      <div class="dropdown-content">
+        <a href="newbuy.html">最新楼盘</a>
+        <a href="secbuy.html">二手楼盘</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="medium">
+    <div id="mySidepanelM" class="sidepanel">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a class="noHover">楼盘</a>
+      <div class="subMenu">
+        <a href="newbuy.html">最新楼盘</a>
+        <a href="secbuy.html">二手楼盘</a>
+      </div>
+      <a class="noHover">我们的服务</a>
+      <div class="subMenu">
+        <a href="sell.html">寻找最新楼盘</a>
+        <a href="service/sec.html">二手买卖</a>
+        <a href="service/rent.html">租赁服务</a>
+        <a href="service/market.html">市场最新成交行情</a>
+        <a href="service/bank.html">银行估价</a>
+      </div>
+      <a class="noHover">工具</a>
+      <div class="subMenu">
+        <a href="tools.html">单位转换器 / <br>贷款计算</a>
+        <a href="tool-RPGT.html">产业盈利税计算</a>
+      </div>
+      <a href="sharing.html">资讯分享</a>
+      <a href="about.html">关于我们</a>
+    </div>
+    <a style="position: fixed; top:0;" href="index.html"><img id="logo" src="src/img/logo.png"></a>
+    <button class="openbtn" onclick="openNavM()">☰</button>
+  </div>
+
+  <div class="small">
+    <div id="mySidepanelS" class="sidepanel">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a class="noHover">楼盘</a>
+      <div class="subMenu">
+        <a href="newbuy.html">最新楼盘</a>
+        <a href="secbuy.html">二手楼盘</a>
+      </div>
+      <a class="noHover">我们的服务</a>
+      <div class="subMenu">
+        <a href="sell.html">寻找最新楼盘</a>
+        <a href="service/sec.html">二手买卖</a>
+        <a href="service/rent.html">租赁服务</a>
+        <a href="service/market.html">市场最新成交行情</a>
+        <a href="service/bank.html">银行估价</a>
+      </div>
+      <a class="noHover">工具</a>
+      <div class="subMenu">
+        <a href="tools.html">单位转换器 / <br>贷款计算</a>
+        <a href="tool-RPGT.html">产业盈利税计算</a>
+      </div>
+      <a href="sharing.html">资讯分享</a>
+      <a href="about.html">关于我们</a>
+    </div>
+    <a style="position: fixed; top:0; left: 0;" href="index.html"><img id="logo" src="src/img/logo.png"></a>
+    <button class="openbtn" onclick="openNavS()">☰</button>
+  </div>
+
+
+  <div class="main-content calculator-main-wrap">
+    <div class="container">
+      <h1 class="Title-03"><span class="icon-calculator-02"></span>产业盈利税 RPGT 计算器</h1>
+      <div class="calculator-wrap">
+        <div class="row">
+          <div class="col-md-6  cal-cover">
+            <form id="rpgt_calc_form" class="remote-form" action="https://loanstreet.com.my/calculator/calculate_rpgt"
+              accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
+              <meta name="csrf-param" content="authenticity_token">
+              <meta name="csrf-token"
+                content="/Brg3TToGeb5EX1HvJQSwdPwnqyBlo9tLaRxstDFG6ukt2TnpkHTvACZrBUF77CWLupWo8C8ZXljAvyNgLGtqA==">
+              <div class="row bottom-margin">
+                <div class="col-sm-6">
+                  <label for="">
+                    Purchase Date
+                    <img width="23" src="src/img/info-icon.png" class="help" data-toggle="tooltip" data-placement="top"
+                      title="" data-original-title="On what date did you buy the house.">
+                  </label>
+                </div>
+                <div class="col-sm-6"><input type="date" name="purchase_date" id="purchase_date" value="2013-01-01"
+                    required="required"></div>
+              </div>
+
+              <div class="row bottom-margin">
+                <div class="col-sm-6">
+                  <label for="">
+                    Purchase Price
+                    <img width="23" src="src/img/info-icon.png" class="help" data-toggle="tooltip" data-placement="top"
+                      title="" data-original-title="The absolute house price.">
+                  </label>
+                </div>
+                <div class="col-sm-6 relative-02">
+                  <span class="display-block">RM</span>
+                  <input type="text" name="purchase_price" id="purchase_price" value="50,000.00"
+                    oninput="onlyNumber(this)" class="padding-left decimalFormater">
+
+                </div>
+              </div>
+
+              <div class="row bottom-margin">
+                <div class="col-sm-6">
+                  <label for="">
+                    Miscellaneous Cost
+                    <img width="23" src="src/img/info-icon.png" class="help" data-toggle="tooltip" data-placement="top"
+                      title="" data-original-title="Costs that don’t fit in a category like relocation costs.">
+                  </label>
+                </div>
+                <div class="col-sm-6 relative-02">
+                  <span class="display-block">RM</span>
+                  <input type="text" name="purchase_misc_cost" id="purchase_misc_cost" value="4,000.00"
+                    oninput="onlyNumber(this)" class="padding-left decimalFormater">
+                </div>
+              </div>
+
+              <div class="row bottom-margin">
+                <div class="col-sm-6">
+                  <label for="">
+                    <b>Acquisition Cost</b>
+                    <img width="23" src="src/img/info-icon.png" class="help" data-toggle="tooltip" data-placement="top"
+                      title="" data-original-title="Purchase price + miscellaneous cost.">
+                  </label>
+                </div>
+                <div class="col-sm-6">
+                  <p class="emphasize-field" id="acq_price">RM 54,000.00</p>
+                </div>
+              </div>
+
+              <div class="row bottom-margin">
+                <div class="col-sm-6">
+                  <label for="">
+                    Disposal Date
+                    <img width="23" src="src/img/info-icon.png" class="help" data-toggle="tooltip" data-placement="top"
+                      title="" data-original-title="The date you sell or sold your house.">
+                  </label>
+                </div>
+                <div class="col-sm-6 relative-02"><input type="date" name="disposal_date" id="disposal_date"
+                    value="2022-10-06" required="required" data-toggle="popover" data-content="" data-original-title=""
+                    title="" min=""></div>
+              </div>
+
+              <div class="row bottom-margin">
+                <div class="col-sm-6">
+                  <label for="">
+                    Selling Price
+                    <img width="23" src="src/img/info-icon.png" class="help" data-toggle="tooltip" data-placement="top"
+                      title="" data-original-title="What is/was the sale price for your house.">
+                  </label>
+                </div>
+
+                <div class="col-sm-6 relative-02 relative-02">
+                  <span class="display-block">RM</span>
+                  <input type="text" name="selling_price" id="selling_price" value="200,000.00"
+                    oninput="onlyNumber(this)" class="padding-left decimalFormater">
+                </div>
+              </div>
+
+              <div class="row bottom-margin">
+                <div class="col-sm-6">
+                  <label for="">
+                    Miscellaneous Cost
+                    <img width="23" src="src/img/info-icon.png" class="help" data-toggle="tooltip" data-placement="top"
+                      title="" data-original-title="Costs that don’t fit in a category like prepare a sales deed.">
+                  </label>
+                </div>
+                <div class="col-sm-6 relative-02">
+                  <span class="display-block">RM</span>
+                  <input type="text" name="selling_misc_cost" id="selling_misc_cost" value="6,000.00"
+                    oninput="onlyNumber(this)" class="padding-left decimalFormater">
+                </div>
+              </div>
+
+              <div class="row bottom-margin">
+                <div class="col-sm-6">
+                  <label for="">
+                    Enhancement Cost <br> (E.g. Renovation)
+                    <img width="23" src="src/img/info-icon.png" class="help" data-toggle="tooltip" data-placement="top"
+                      title="" data-original-title="The costs of an enhancement or a renovation.">
+                  </label>
+                </div>
+                <div class="col-sm-6 relative-02">
+                  <span class="display-block">RM</span>
+                  <input type="text" name="enhancement_cost" id="enhancement_cost" value="20,000.00"
+                    oninput="onlyNumber(this)" class="padding-left decimalFormater">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 calculate-btn">
+                  <input type="submit" name="commit" value="Calculate"
+                    class="btn btn-loanstreet ua rpgt-calc popup_calc_btn" data-disable-with="Calculate">
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-md-6 text-center result-wrap">
+            <div class="rpgt-table">
+              <table class="table table-striped">
+                <tbody>
+                  <tr>
+                    <th> &nbsp;</th>
+                    <th>Citizen</th>
+                    <th>Non Citizen</th>
+                    <th>Company</th>
+                  </tr>
+                  <tr>
+                    <th>RPGT Rate</th>
+                    <td>5.0%</td>
+                    <td>10.0%</td>
+                    <td>10.0%</td>
+                  </tr>
+                  <tr>
+                    <th>Chargeable Gain</th>
+                    <td>RM 120,000.00</td>
+                    <td>RM 120,000.00</td>
+                    <td>RM 120,000.00</td>
+                  </tr>
+                  <tr>
+                    <th>Exemption</th>
+                    <td>RM 12,000.00</td>
+                    <td>RM 12,000.00</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th>Net Chargeable Gain</th>
+                    <td>RM 108,000.00</td>
+                    <td>RM 108,000.00</td>
+                    <td>RM 120,000.00</td>
+                  </tr>
+                  <tr>
+                    <th>RPGT Payable</th>
+                    <td>RM 5,400.00</td>
+                    <td>RM 10,800.00</td>
+                    <td>RM 12,000.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./RPGT _ CKHT Calculator_files/jsapi"></script>
+  <script
+    src="./RPGT _ CKHT Calculator_files/calculator-214e6dbc203317cdeff9ac61a9bf26c968eaf63927286bfb3159d8e31f4c82ac.js.download">
+  </script>
+
+  <footer>
+    <div class="social">
+      <a href="mailto:allyang.iqi@gmail.com" class="mail"><i class="ion-android-mail"></i></a>
+      <a href="https://wa.me/60138890033" class="ws"><i class="ion-social-whatsapp-outline"></i></a>
+      <a href="https://www.facebook.com/danny.ally.realtor" class="fb"><i class="ion-social-facebook"></i></a>
+      <a href="https://www.instagram.com/ally.ang.property" class="ig"><i class="ion-social-instagram"></i></a>
+      <a href="https://youtube.com/channel/UCGjeFFDOGMoPxGC6-COJX0Q" class="yt"><i class="ion-social-youtube"></i></a>
+    </div>
+    <p class="copyright">© 2022 ALLYPROPERTIES. ALL RIGHTS RESERVED.</p>
+  </footer>
+</body>
+
+</html>
